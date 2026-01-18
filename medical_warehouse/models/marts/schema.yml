@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_messages
+    description: "Fact table with one row per Telegram message"
+    columns:
+      - name: message_id
+        description: "Unique ID for each message"
+        tests: [unique, not_null]
+      - name: channel_key
+        description: "FK to dim_channels"
+        tests:
+          - relationships:
+              to: ref('dim_channels')
+              field: channel_key
+      - name: date_key
+        description: "FK to dim_dates"
+        tests:
+          - relationships:
+              to: ref('dim_dates')
+              field: date_key
