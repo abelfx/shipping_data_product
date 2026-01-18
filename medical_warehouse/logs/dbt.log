@@ -1,0 +1,695 @@
+[0m17:06:05.946705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b084dc21c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b084cba3be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b084cba1900>]}
+
+
+============================== 17:06:05.949773 | a7751a8a-6118-412d-845b-df51040fc4ba ==============================
+[0m17:06:05.949773 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:06:05.950348 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'log_cache_events': 'False', 'use_colors': 'True', 'empty': 'None', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'debug': 'False', 'profiles_dir': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse', 'printer_width': '80', 'log_path': 'logs', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'warn_error': 'None', 'fail_fast': 'False', 'write_json': 'True', 'quiet': 'False'}
+[0m17:06:05.957271 [info ] [MainThread]: dbt version: 1.11.2
+[0m17:06:05.957834 [info ] [MainThread]: python version: 3.10.12
+[0m17:06:05.958258 [info ] [MainThread]: python path: /usr/bin/python3
+[0m17:06:05.958691 [info ] [MainThread]: os info: Linux-6.8.0-90-generic-x86_64-with-glibc2.35
+[0m17:06:06.063080 [info ] [MainThread]: Using profiles dir at /home/abel/Desktop/kaim/shipping_data/medical_warehouse
+[0m17:06:06.063583 [info ] [MainThread]: Using profiles.yml file at /home/abel/Desktop/kaim/shipping_data/medical_warehouse/profiles.yml
+[0m17:06:06.063973 [info ] [MainThread]: Using dbt_project.yml file at /home/abel/Desktop/kaim/shipping_data/medical_warehouse/dbt_project.yml
+[0m17:06:06.064495 [info ] [MainThread]: adapter type: postgres
+[0m17:06:06.064893 [info ] [MainThread]: adapter version: 1.10.0
+[0m17:06:06.065615 [info ] [MainThread]: Configuration:
+[0m17:06:06.066089 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:06:06.066513 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m17:06:06.066879 [info ] [MainThread]: Required dependencies:
+[0m17:06:06.067274 [debug] [MainThread]: Executing "git --help"
+[0m17:06:06.069287 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:06:06.069885 [debug] [MainThread]: STDERR: "b''"
+[0m17:06:06.070342 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:06:06.070808 [info ] [MainThread]: Connection:
+[0m17:06:06.071229 [info ] [MainThread]:   host: localhost
+[0m17:06:06.071661 [info ] [MainThread]:   port: 5433
+[0m17:06:06.072053 [info ] [MainThread]:   user: warehouse_user
+[0m17:06:06.072459 [info ] [MainThread]:   database: medical_warehouse
+[0m17:06:06.072865 [info ] [MainThread]:   schema: staging
+[0m17:06:06.073286 [info ] [MainThread]:   connect_timeout: 10
+[0m17:06:06.073712 [info ] [MainThread]:   role: None
+[0m17:06:06.074146 [info ] [MainThread]:   search_path: None
+[0m17:06:06.074560 [info ] [MainThread]:   keepalives_idle: 0
+[0m17:06:06.074962 [info ] [MainThread]:   sslmode: None
+[0m17:06:06.075633 [info ] [MainThread]:   sslcert: None
+[0m17:06:06.076492 [info ] [MainThread]:   sslkey: None
+[0m17:06:06.076975 [info ] [MainThread]:   sslrootcert: None
+[0m17:06:06.077473 [info ] [MainThread]:   application_name: dbt
+[0m17:06:06.077957 [info ] [MainThread]:   retries: 1
+[0m17:06:06.078615 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m17:06:06.138782 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m17:06:06.149680 [debug] [MainThread]: Using postgres connection "debug"
+[0m17:06:06.150048 [debug] [MainThread]: On debug: select 1 as id
+[0m17:06:06.150343 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:06:06.160835 [debug] [MainThread]: SQL status: SELECT 1 in 0.010 seconds
+[0m17:06:06.161769 [debug] [MainThread]: On debug: Close
+[0m17:06:06.162228 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:06:06.162696 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:06:06.163067 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  dbt_project.yml does not parse to a dictionary
+
+
+[0m17:06:06.163855 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.2661988, "process_in_blocks": "1656", "process_kernel_time": 0.081091, "process_mem_max_rss": "134676", "process_out_blocks": "24", "process_user_time": 2.022287}
+[0m17:06:06.164390 [debug] [MainThread]: Command `dbt debug` failed at 17:06:06.164285 after 0.27 seconds
+[0m17:06:06.164865 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:06:06.165331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b084dc21c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b084c9629e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b084c962620>]}
+[0m17:06:06.165833 [debug] [MainThread]: Flushing usage events
+[0m17:06:12.480872 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:06:59.684673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73922944c7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x739228423af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x739228423a90>]}
+
+
+============================== 17:06:59.686957 | 3b206c5e-118a-4e39-a30c-4dccf8286c55 ==============================
+[0m17:06:59.686957 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:06:59.687542 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'debug': 'False', 'empty': 'False', 'printer_width': '80', 'quiet': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'partial_parse': 'True', 'no_print': 'None', 'profiles_dir': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse', 'log_cache_events': 'False', 'static_parser': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'log_path': 'logs', 'introspect': 'True', 'version_check': 'True', 'use_colors': 'True', 'warn_error': 'None'}
+[0m17:06:59.688104 [error] [MainThread]: Encountered an error:
+Runtime Error
+  dbt_project.yml does not parse to a dictionary
+[0m17:06:59.688813 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.049191955, "process_in_blocks": "0", "process_kernel_time": 0.071881, "process_mem_max_rss": "116780", "process_out_blocks": "16", "process_user_time": 1.870907}
+[0m17:06:59.689253 [debug] [MainThread]: Command `dbt run` failed at 17:06:59.689180 after 0.05 seconds
+[0m17:06:59.689582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73922944c7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x739228423640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x739228423a30>]}
+[0m17:06:59.689910 [debug] [MainThread]: Flushing usage events
+[0m17:07:03.010273 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:07:05.728972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bbe3309a6e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bbe31f24220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bbe31f241c0>]}
+
+
+============================== 17:07:05.731904 | 7cb32c4a-355c-4bcc-b66a-e21f47b9763f ==============================
+[0m17:07:05.731904 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:07:05.732524 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'invocation_command': 'dbt test', 'introspect': 'True', 'static_parser': 'True', 'log_path': 'logs', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'fail_fast': 'False', 'quiet': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'debug': 'False', 'printer_width': '80', 'empty': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'write_json': 'True', 'no_print': 'None', 'profiles_dir': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse', 'log_format': 'default', 'use_colors': 'True'}
+[0m17:07:05.733196 [error] [MainThread]: Encountered an error:
+Runtime Error
+  dbt_project.yml does not parse to a dictionary
+[0m17:07:05.734030 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.077299654, "process_in_blocks": "0", "process_kernel_time": 0.07689, "process_mem_max_rss": "116808", "process_out_blocks": "0", "process_user_time": 2.328688}
+[0m17:07:05.734502 [debug] [MainThread]: Command `dbt test` failed at 17:07:05.734412 after 0.08 seconds
+[0m17:07:05.734866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bbe3309a6e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bbe31f24940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bbe31f24160>]}
+[0m17:07:05.735280 [debug] [MainThread]: Flushing usage events
+[0m17:07:07.098188 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:08:06.231518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785f05be80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785df12f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785df12f20>]}
+
+
+============================== 17:08:06.233945 | 805fc67c-ebbd-436a-8fcd-584294c4390c ==============================
+[0m17:08:06.233945 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:08:06.234496 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'invocation_command': 'dbt debug', 'quiet': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error': 'None', 'profiles_dir': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse', 'log_path': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse/logs', 'no_print': 'None', 'fail_fast': 'False', 'write_json': 'True', 'debug': 'False', 'target_path': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'static_parser': 'True', 'use_colors': 'True', 'empty': 'None', 'printer_width': '80'}
+[0m17:08:06.240172 [info ] [MainThread]: dbt version: 1.11.2
+[0m17:08:06.240652 [info ] [MainThread]: python version: 3.10.12
+[0m17:08:06.241056 [info ] [MainThread]: python path: /usr/bin/python3
+[0m17:08:06.241436 [info ] [MainThread]: os info: Linux-6.8.0-90-generic-x86_64-with-glibc2.35
+[0m17:08:06.347117 [info ] [MainThread]: Using profiles dir at /home/abel/Desktop/kaim/shipping_data/medical_warehouse
+[0m17:08:06.347618 [info ] [MainThread]: Using profiles.yml file at /home/abel/Desktop/kaim/shipping_data/medical_warehouse/profiles.yml
+[0m17:08:06.348034 [info ] [MainThread]: Using dbt_project.yml file at /home/abel/Desktop/kaim/shipping_data/medical_warehouse/dbt_project.yml
+[0m17:08:06.348560 [info ] [MainThread]: adapter type: postgres
+[0m17:08:06.348913 [info ] [MainThread]: adapter version: 1.10.0
+[0m17:08:06.352103 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m17:08:06.352577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '805fc67c-ebbd-436a-8fcd-584294c4390c', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785de53160>]}
+[0m17:08:06.447593 [info ] [MainThread]: Configuration:
+[0m17:08:06.448130 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:08:06.448529 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m17:08:06.448934 [info ] [MainThread]: Required dependencies:
+[0m17:08:06.449338 [debug] [MainThread]: Executing "git --help"
+[0m17:08:06.451850 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:08:06.452509 [debug] [MainThread]: STDERR: "b''"
+[0m17:08:06.452875 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:08:06.453252 [info ] [MainThread]: Connection:
+[0m17:08:06.453682 [info ] [MainThread]:   host: localhost
+[0m17:08:06.454038 [info ] [MainThread]:   port: 5433
+[0m17:08:06.454408 [info ] [MainThread]:   user: warehouse_user
+[0m17:08:06.454769 [info ] [MainThread]:   database: medical_warehouse
+[0m17:08:06.455117 [info ] [MainThread]:   schema: staging
+[0m17:08:06.455481 [info ] [MainThread]:   connect_timeout: 10
+[0m17:08:06.455859 [info ] [MainThread]:   role: None
+[0m17:08:06.456228 [info ] [MainThread]:   search_path: None
+[0m17:08:06.456610 [info ] [MainThread]:   keepalives_idle: 0
+[0m17:08:06.456980 [info ] [MainThread]:   sslmode: None
+[0m17:08:06.457409 [info ] [MainThread]:   sslcert: None
+[0m17:08:06.457835 [info ] [MainThread]:   sslkey: None
+[0m17:08:06.458250 [info ] [MainThread]:   sslrootcert: None
+[0m17:08:06.458725 [info ] [MainThread]:   application_name: dbt
+[0m17:08:06.459462 [info ] [MainThread]:   retries: 1
+[0m17:08:06.460379 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m17:08:06.517555 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m17:08:06.528526 [debug] [MainThread]: Using postgres connection "debug"
+[0m17:08:06.528946 [debug] [MainThread]: On debug: select 1 as id
+[0m17:08:06.529294 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:08:06.541236 [debug] [MainThread]: SQL status: SELECT 1 in 0.012 seconds
+[0m17:08:06.542195 [debug] [MainThread]: On debug: Close
+[0m17:08:06.542684 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:08:06.543154 [info ] [MainThread]: [32mAll checks passed![0m
+[0m17:08:06.543838 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m17:08:06.544790 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.3644933, "process_in_blocks": "0", "process_kernel_time": 0.076961, "process_mem_max_rss": "136468", "process_out_blocks": "16", "process_user_time": 2.285867}
+[0m17:08:06.545360 [debug] [MainThread]: Command `dbt debug` succeeded at 17:08:06.545256 after 0.37 seconds
+[0m17:08:06.545791 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:08:06.546233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785f05be80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785e617af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d785d540e80>]}
+[0m17:08:06.546716 [debug] [MainThread]: Flushing usage events
+[0m17:08:08.055321 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:08:33.489072 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d8c4feb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d7b0f220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d7b0f1c0>]}
+
+
+============================== 17:08:33.491247 | 562f99a3-37cf-407c-ab61-3874217b58dd ==============================
+[0m17:08:33.491247 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:08:33.491726 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'static_parser': 'True', 'printer_width': '80', 'warn_error': 'None', 'target_path': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'no_print': 'None', 'partial_parse': 'True', 'log_cache_events': 'False', 'log_path': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse/logs', 'version_check': 'True', 'profiles_dir': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse', 'invocation_command': 'dbt run', 'quiet': 'False', 'debug': 'False', 'empty': 'False', 'fail_fast': 'False', 'log_format': 'default', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:08:33.604162 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m17:08:33.604789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d711fc10>]}
+[0m17:08:33.711740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d711ca60>]}
+[0m17:08:33.763232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d711cf40>]}
+[0m17:08:33.763885 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m17:08:33.823024 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m17:08:33.823655 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:08:33.824162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d716b8e0>]}
+[0m17:08:34.698865 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.medical_warehouse.marts
+[0m17:08:34.703679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d41b4250>]}
+[0m17:08:34.781222 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/manifest.json
+[0m17:08:34.782903 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/semantic_manifest.json
+[0m17:08:34.793963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d41b6140>]}
+[0m17:08:34.794479 [info ] [MainThread]: Found 1 model, 3 data tests, 464 macros
+[0m17:08:34.794898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d41b7be0>]}
+[0m17:08:34.796470 [info ] [MainThread]: 
+[0m17:08:34.796888 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:08:34.797244 [info ] [MainThread]: 
+[0m17:08:34.797795 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:08:34.798905 [debug] [ThreadPool]: Acquiring new postgres connection 'list_medical_warehouse'
+[0m17:08:34.823864 [debug] [ThreadPool]: Using postgres connection "list_medical_warehouse"
+[0m17:08:34.824405 [debug] [ThreadPool]: On list_medical_warehouse: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "connection_name": "list_medical_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:08:34.825330 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:08:34.839154 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.014 seconds
+[0m17:08:34.840590 [debug] [ThreadPool]: On list_medical_warehouse: Close
+[0m17:08:34.841583 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_medical_warehouse, now create_medical_warehouse_staging)
+[0m17:08:34.842110 [debug] [ThreadPool]: Creating schema "database: "medical_warehouse"
+schema: "staging"
+"
+[0m17:08:34.847132 [debug] [ThreadPool]: Using postgres connection "create_medical_warehouse_staging"
+[0m17:08:34.847552 [debug] [ThreadPool]: On create_medical_warehouse_staging: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "connection_name": "create_medical_warehouse_staging"} */
+create schema if not exists "staging"
+[0m17:08:34.847852 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:08:34.857190 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.009 seconds
+[0m17:08:34.858395 [debug] [ThreadPool]: On create_medical_warehouse_staging: COMMIT
+[0m17:08:34.858780 [debug] [ThreadPool]: Using postgres connection "create_medical_warehouse_staging"
+[0m17:08:34.859105 [debug] [ThreadPool]: On create_medical_warehouse_staging: COMMIT
+[0m17:08:34.860874 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m17:08:34.861269 [debug] [ThreadPool]: On create_medical_warehouse_staging: Close
+[0m17:08:34.863166 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_medical_warehouse_staging, now list_medical_warehouse_staging)
+[0m17:08:34.869240 [debug] [ThreadPool]: Using postgres connection "list_medical_warehouse_staging"
+[0m17:08:34.869680 [debug] [ThreadPool]: On list_medical_warehouse_staging: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "connection_name": "list_medical_warehouse_staging"} */
+select
+      'medical_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'medical_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'medical_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m17:08:34.870044 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:08:34.881745 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.012 seconds
+[0m17:08:34.882885 [debug] [ThreadPool]: On list_medical_warehouse_staging: ROLLBACK
+[0m17:08:34.883346 [debug] [ThreadPool]: On list_medical_warehouse_staging: Close
+[0m17:08:34.887532 [debug] [MainThread]: Using postgres connection "master"
+[0m17:08:34.887975 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m17:08:34.888373 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:08:34.900805 [debug] [MainThread]: SQL status: SELECT 0 in 0.012 seconds
+[0m17:08:34.902196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4ce56fb50>]}
+[0m17:08:34.902739 [debug] [MainThread]: On master: ROLLBACK
+[0m17:08:34.903329 [debug] [MainThread]: On master: COMMIT
+[0m17:08:34.903842 [debug] [MainThread]: Using postgres connection "master"
+[0m17:08:34.904250 [debug] [MainThread]: On master: COMMIT
+[0m17:08:34.904714 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:08:34.905124 [debug] [MainThread]: On master: Close
+[0m17:08:34.908530 [debug] [Thread-1 (]: Began running node model.medical_warehouse.stg_telegram_messages
+[0m17:08:34.909426 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.stg_telegram_messages ...................... [RUN]
+[0m17:08:34.909967 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medical_warehouse_staging, now model.medical_warehouse.stg_telegram_messages)
+[0m17:08:34.910493 [debug] [Thread-1 (]: Began compiling node model.medical_warehouse.stg_telegram_messages
+[0m17:08:34.917493 [debug] [Thread-1 (]: Writing injected SQL for node "model.medical_warehouse.stg_telegram_messages"
+[0m17:08:34.918741 [debug] [Thread-1 (]: Began executing node model.medical_warehouse.stg_telegram_messages
+[0m17:08:34.959740 [debug] [Thread-1 (]: Writing runtime sql for node "model.medical_warehouse.stg_telegram_messages"
+[0m17:08:34.960567 [debug] [Thread-1 (]: Using postgres connection "model.medical_warehouse.stg_telegram_messages"
+[0m17:08:34.961060 [debug] [Thread-1 (]: On model.medical_warehouse.stg_telegram_messages: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "node_id": "model.medical_warehouse.stg_telegram_messages"} */
+
+  create view "medical_warehouse"."staging"."stg_telegram_messages__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM raw.telegram_messages
+),
+
+cleaned AS (
+    SELECT
+        message_id,
+        channel_name,
+        CAST(message_date AS DATE) AS message_date,
+        message_text,
+        LENGTH(message_text) AS message_length,
+        COALESCE(views, 0) AS view_count,
+        COALESCE(forwards, 0) AS forward_count,
+        COALESCE(has_media, FALSE) AS has_image,
+        image_path
+    FROM source
+    WHERE message_text IS NOT NULL
+)
+
+SELECT * FROM cleaned;
+  );
+[0m17:08:34.961471 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:34.971998 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 26: SELECT * FROM cleaned;
+                              ^
+
+[0m17:08:34.972621 [debug] [Thread-1 (]: On model.medical_warehouse.stg_telegram_messages: ROLLBACK
+[0m17:08:34.973244 [debug] [Thread-1 (]: On model.medical_warehouse.stg_telegram_messages: Close
+[0m17:08:34.975846 [debug] [Thread-1 (]: Database Error in model stg_telegram_messages (models/staging/stg_telegram_messages.sql)
+  syntax error at or near ";"
+  LINE 26: SELECT * FROM cleaned;
+                                ^
+  compiled code at target/run/medical_warehouse/models/staging/stg_telegram_messages.sql
+[0m17:08:34.977424 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '562f99a3-37cf-407c-ab61-3874217b58dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4da5bff10>]}
+[0m17:08:34.978231 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model staging.stg_telegram_messages ............. [[31mERROR[0m in 0.07s]
+[0m17:08:34.978966 [debug] [Thread-1 (]: Finished running node model.medical_warehouse.stg_telegram_messages
+[0m17:08:34.979714 [debug] [Thread-4 (]: Marking all children of 'model.medical_warehouse.stg_telegram_messages' to be skipped because of status 'error'.  Reason: Database Error in model stg_telegram_messages (models/staging/stg_telegram_messages.sql)
+  syntax error at or near ";"
+  LINE 26: SELECT * FROM cleaned;
+                                ^
+  compiled code at target/run/medical_warehouse/models/staging/stg_telegram_messages.sql.
+[0m17:08:34.981848 [debug] [MainThread]: On master: COMMIT
+[0m17:08:34.982234 [debug] [MainThread]: Using postgres connection "master"
+[0m17:08:34.982568 [debug] [MainThread]: On master: COMMIT
+[0m17:08:34.982914 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:08:34.994633 [debug] [MainThread]: SQL status: COMMIT in 0.012 seconds
+[0m17:08:34.995358 [debug] [MainThread]: On master: Close
+[0m17:08:34.996204 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:08:34.996691 [debug] [MainThread]: Connection 'model.medical_warehouse.stg_telegram_messages' was properly closed.
+[0m17:08:34.997102 [info ] [MainThread]: 
+[0m17:08:34.997556 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.20 seconds (0.20s).
+[0m17:08:34.998322 [debug] [MainThread]: Command end result
+[0m17:08:35.024104 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/manifest.json
+[0m17:08:35.025818 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/semantic_manifest.json
+[0m17:08:35.031550 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/run_results.json
+[0m17:08:35.031905 [info ] [MainThread]: 
+[0m17:08:35.032315 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:08:35.032706 [info ] [MainThread]: 
+[0m17:08:35.033246 [error] [MainThread]: [31mFailure in model stg_telegram_messages (models/staging/stg_telegram_messages.sql)[0m
+[0m17:08:35.033772 [error] [MainThread]:   Database Error in model stg_telegram_messages (models/staging/stg_telegram_messages.sql)
+  syntax error at or near ";"
+  LINE 26: SELECT * FROM cleaned;
+                                ^
+  compiled code at target/run/medical_warehouse/models/staging/stg_telegram_messages.sql
+[0m17:08:35.034203 [info ] [MainThread]: 
+[0m17:08:35.034697 [info ] [MainThread]:   compiled code at target/compiled/medical_warehouse/models/staging/stg_telegram_messages.sql
+[0m17:08:35.035106 [info ] [MainThread]: 
+[0m17:08:35.035569 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:08:35.036201 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m17:08:35.037277 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.5931572, "process_in_blocks": "128", "process_kernel_time": 0.118235, "process_mem_max_rss": "152900", "process_out_blocks": "2784", "process_user_time": 3.333648}
+[0m17:08:35.037953 [debug] [MainThread]: Command `dbt run` failed at 17:08:35.037829 after 1.59 seconds
+[0m17:08:35.038519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d8c4feb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d711cf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73c4d8c0c850>]}
+[0m17:08:35.039180 [debug] [MainThread]: Flushing usage events
+[0m17:08:36.320393 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:08:39.102183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec43b96920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec42a24220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec42a241c0>]}
+
+
+============================== 17:08:39.104716 | 93ad1f3f-7ed9-4b84-95b7-67eeb5113b97 ==============================
+[0m17:08:39.104716 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:08:39.105235 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'target_path': 'None', 'empty': 'None', 'version_check': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'use_colors': 'True', 'invocation_command': 'dbt test', 'debug': 'False', 'warn_error': 'None', 'quiet': 'False', 'profiles_dir': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse', 'log_path': '/home/abel/Desktop/kaim/shipping_data/medical_warehouse/logs', 'introspect': 'True'}
+[0m17:08:39.254101 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `source-paths` config has been renamed to `model-paths`. Please update your
+`dbt_project.yml` configuration to reflect this change.
+[0m17:08:39.255004 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec420b7bb0>]}
+[0m17:08:39.407727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec420c5450>]}
+[0m17:08:39.484236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec420b5810>]}
+[0m17:08:39.485674 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m17:08:39.554662 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m17:08:39.654187 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:08:39.655182 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:08:39.655950 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:08:39.663876 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.medical_warehouse.marts
+[0m17:08:39.708632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec40d5d750>]}
+[0m17:08:39.802247 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/manifest.json
+[0m17:08:39.804148 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/semantic_manifest.json
+[0m17:08:39.824935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec40d8d360>]}
+[0m17:08:39.825602 [info ] [MainThread]: Found 1 model, 3 data tests, 464 macros
+[0m17:08:39.826026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec40d8f880>]}
+[0m17:08:39.828796 [info ] [MainThread]: 
+[0m17:08:39.829378 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:08:39.829864 [info ] [MainThread]: 
+[0m17:08:39.830587 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:08:39.832159 [debug] [ThreadPool]: Acquiring new postgres connection 'list_medical_warehouse_staging'
+[0m17:08:39.861898 [debug] [ThreadPool]: Using postgres connection "list_medical_warehouse_staging"
+[0m17:08:39.862604 [debug] [ThreadPool]: On list_medical_warehouse_staging: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "connection_name": "list_medical_warehouse_staging"} */
+select
+      'medical_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'staging'
+    union all
+    select
+      'medical_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'staging'
+    union all
+    select
+      'medical_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'staging'
+  
+[0m17:08:39.863149 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:08:39.883455 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.020 seconds
+[0m17:08:39.885771 [debug] [ThreadPool]: On list_medical_warehouse_staging: ROLLBACK
+[0m17:08:39.886495 [debug] [ThreadPool]: On list_medical_warehouse_staging: Close
+[0m17:08:39.893532 [debug] [MainThread]: Using postgres connection "master"
+[0m17:08:39.894081 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m17:08:39.894553 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:08:39.912897 [debug] [MainThread]: SQL status: SELECT 0 in 0.018 seconds
+[0m17:08:39.914285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '93ad1f3f-7ed9-4b84-95b7-67eeb5113b97', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec40d8db40>]}
+[0m17:08:39.914883 [debug] [MainThread]: On master: ROLLBACK
+[0m17:08:39.915543 [debug] [MainThread]: On master: COMMIT
+[0m17:08:39.916022 [debug] [MainThread]: Using postgres connection "master"
+[0m17:08:39.916416 [debug] [MainThread]: On master: COMMIT
+[0m17:08:39.916983 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:08:39.917431 [debug] [MainThread]: On master: Close
+[0m17:08:39.920210 [debug] [Thread-1 (]: Began running node test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8
+[0m17:08:39.920985 [info ] [Thread-1 (]: 1 of 3 START test not_null_stg_telegram_messages_channel_name .................. [RUN]
+[0m17:08:39.922346 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_medical_warehouse_staging, now test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8)
+[0m17:08:39.922970 [debug] [Thread-1 (]: Began compiling node test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8
+[0m17:08:39.947254 [debug] [Thread-1 (]: Writing injected SQL for node "test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8"
+[0m17:08:39.948240 [debug] [Thread-1 (]: Began executing node test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8
+[0m17:08:39.969884 [debug] [Thread-1 (]: Writing runtime sql for node "test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8"
+[0m17:08:39.970775 [debug] [Thread-1 (]: Using postgres connection "test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8"
+[0m17:08:39.971338 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "node_id": "test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select channel_name
+from "medical_warehouse"."staging"."stg_telegram_messages"
+where channel_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:08:39.972333 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:39.986252 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "staging.stg_telegram_messages" does not exist
+LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+              ^
+
+[0m17:08:39.987231 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8: ROLLBACK
+[0m17:08:39.988422 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8: Close
+[0m17:08:39.991136 [debug] [Thread-1 (]: Database Error in test not_null_stg_telegram_messages_channel_name (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_channel_name.sql
+[0m17:08:39.991906 [error] [Thread-1 (]: 1 of 3 ERROR not_null_stg_telegram_messages_channel_name ....................... [[31mERROR[0m in 0.07s]
+[0m17:08:39.993166 [debug] [Thread-1 (]: Finished running node test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8
+[0m17:08:39.993969 [debug] [Thread-1 (]: Began running node test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14
+[0m17:08:39.995157 [debug] [Thread-4 (]: Marking all children of 'test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8' to be skipped because of status 'error'.  Reason: Database Error in test not_null_stg_telegram_messages_channel_name (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_channel_name.sql.
+[0m17:08:39.995946 [info ] [Thread-1 (]: 2 of 3 START test not_null_stg_telegram_messages_message_date .................. [RUN]
+[0m17:08:39.997492 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.medical_warehouse.not_null_stg_telegram_messages_channel_name.38886ae8d8, now test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14)
+[0m17:08:39.998078 [debug] [Thread-1 (]: Began compiling node test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14
+[0m17:08:40.007244 [debug] [Thread-1 (]: Writing injected SQL for node "test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14"
+[0m17:08:40.008335 [debug] [Thread-1 (]: Began executing node test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14
+[0m17:08:40.012141 [debug] [Thread-1 (]: Writing runtime sql for node "test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14"
+[0m17:08:40.012928 [debug] [Thread-1 (]: Using postgres connection "test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14"
+[0m17:08:40.013558 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "node_id": "test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select message_date
+from "medical_warehouse"."staging"."stg_telegram_messages"
+where message_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:08:40.014189 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:40.027364 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "staging.stg_telegram_messages" does not exist
+LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+              ^
+
+[0m17:08:40.028171 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14: ROLLBACK
+[0m17:08:40.029076 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14: Close
+[0m17:08:40.030596 [debug] [Thread-1 (]: Database Error in test not_null_stg_telegram_messages_message_date (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_date.sql
+[0m17:08:40.031329 [error] [Thread-1 (]: 2 of 3 ERROR not_null_stg_telegram_messages_message_date ....................... [[31mERROR[0m in 0.03s]
+[0m17:08:40.032100 [debug] [Thread-1 (]: Finished running node test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14
+[0m17:08:40.032616 [debug] [Thread-1 (]: Began running node test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6
+[0m17:08:40.033300 [debug] [Thread-4 (]: Marking all children of 'test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14' to be skipped because of status 'error'.  Reason: Database Error in test not_null_stg_telegram_messages_message_date (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_date.sql.
+[0m17:08:40.033891 [info ] [Thread-1 (]: 3 of 3 START test not_null_stg_telegram_messages_message_id .................... [RUN]
+[0m17:08:40.035041 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.medical_warehouse.not_null_stg_telegram_messages_message_date.5e47e63b14, now test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6)
+[0m17:08:40.035688 [debug] [Thread-1 (]: Began compiling node test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6
+[0m17:08:40.041716 [debug] [Thread-1 (]: Writing injected SQL for node "test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6"
+[0m17:08:40.042653 [debug] [Thread-1 (]: Began executing node test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6
+[0m17:08:40.046315 [debug] [Thread-1 (]: Writing runtime sql for node "test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6"
+[0m17:08:40.047408 [debug] [Thread-1 (]: Using postgres connection "test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6"
+[0m17:08:40.047938 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "medical_warehouse", "target_name": "dev", "node_id": "test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select message_id
+from "medical_warehouse"."staging"."stg_telegram_messages"
+where message_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m17:08:40.048382 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:40.062299 [debug] [Thread-1 (]: Postgres adapter: Postgres error: relation "staging.stg_telegram_messages" does not exist
+LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+              ^
+
+[0m17:08:40.063177 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6: ROLLBACK
+[0m17:08:40.064205 [debug] [Thread-1 (]: On test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6: Close
+[0m17:08:40.065920 [debug] [Thread-1 (]: Database Error in test not_null_stg_telegram_messages_message_id (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_id.sql
+[0m17:08:40.066569 [error] [Thread-1 (]: 3 of 3 ERROR not_null_stg_telegram_messages_message_id ......................... [[31mERROR[0m in 0.03s]
+[0m17:08:40.067359 [debug] [Thread-1 (]: Finished running node test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6
+[0m17:08:40.068704 [debug] [Thread-4 (]: Marking all children of 'test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6' to be skipped because of status 'error'.  Reason: Database Error in test not_null_stg_telegram_messages_message_id (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_id.sql.
+[0m17:08:40.070536 [debug] [MainThread]: On master: COMMIT
+[0m17:08:40.071174 [debug] [MainThread]: Using postgres connection "master"
+[0m17:08:40.071770 [debug] [MainThread]: On master: COMMIT
+[0m17:08:40.072293 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:08:40.085328 [debug] [MainThread]: SQL status: COMMIT in 0.013 seconds
+[0m17:08:40.086533 [debug] [MainThread]: On master: Close
+[0m17:08:40.087514 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:08:40.088068 [debug] [MainThread]: Connection 'test.medical_warehouse.not_null_stg_telegram_messages_message_id.9b3fea71d6' was properly closed.
+[0m17:08:40.088629 [info ] [MainThread]: 
+[0m17:08:40.089157 [info ] [MainThread]: Finished running 3 data tests in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[0m17:08:40.091006 [debug] [MainThread]: Command end result
+[0m17:08:40.118582 [debug] [MainThread]: Wrote artifact WritableManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/manifest.json
+[0m17:08:40.120920 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/semantic_manifest.json
+[0m17:08:40.130878 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/abel/Desktop/kaim/shipping_data/medical_warehouse/target/run_results.json
+[0m17:08:40.131779 [info ] [MainThread]: 
+[0m17:08:40.132523 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m17:08:40.133161 [info ] [MainThread]: 
+[0m17:08:40.133851 [error] [MainThread]: [31mFailure in test not_null_stg_telegram_messages_channel_name (models/staging/schema.yml)[0m
+[0m17:08:40.134509 [error] [MainThread]:   Database Error in test not_null_stg_telegram_messages_channel_name (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_channel_name.sql
+[0m17:08:40.135046 [info ] [MainThread]: 
+[0m17:08:40.135597 [info ] [MainThread]:   compiled code at target/compiled/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_channel_name.sql
+[0m17:08:40.136007 [info ] [MainThread]: 
+[0m17:08:40.136490 [error] [MainThread]: [31mFailure in test not_null_stg_telegram_messages_message_date (models/staging/schema.yml)[0m
+[0m17:08:40.136960 [error] [MainThread]:   Database Error in test not_null_stg_telegram_messages_message_date (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_date.sql
+[0m17:08:40.137378 [info ] [MainThread]: 
+[0m17:08:40.138248 [info ] [MainThread]:   compiled code at target/compiled/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_date.sql
+[0m17:08:40.138866 [info ] [MainThread]: 
+[0m17:08:40.139394 [error] [MainThread]: [31mFailure in test not_null_stg_telegram_messages_message_id (models/staging/schema.yml)[0m
+[0m17:08:40.139939 [error] [MainThread]:   Database Error in test not_null_stg_telegram_messages_message_id (models/staging/schema.yml)
+  relation "staging.stg_telegram_messages" does not exist
+  LINE 17: from "medical_warehouse"."staging"."stg_telegram_messages"
+                ^
+  compiled code at target/run/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_id.sql
+[0m17:08:40.140394 [info ] [MainThread]: 
+[0m17:08:40.140933 [info ] [MainThread]:   compiled code at target/compiled/medical_warehouse/models/staging/schema.yml/not_null_stg_telegram_messages_message_id.sql
+[0m17:08:40.141387 [info ] [MainThread]: 
+[0m17:08:40.141916 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=3 SKIP=0 NO-OP=0 TOTAL=3
+[0m17:08:40.142874 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigSourcePathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m17:08:40.144202 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 1.1025177, "process_in_blocks": "0", "process_kernel_time": 0.131318, "process_mem_max_rss": "145672", "process_out_blocks": "1936", "process_user_time": 3.264927}
+[0m17:08:40.144762 [debug] [MainThread]: Command `dbt test` failed at 17:08:40.144661 after 1.10 seconds
+[0m17:08:40.145241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec43b96920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec447dc9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dec40d97d60>]}
+[0m17:08:40.145736 [debug] [MainThread]: Flushing usage events
+[0m17:08:41.232224 [debug] [MainThread]: An error was encountered while trying to flush usage events

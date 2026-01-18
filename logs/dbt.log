@@ -1,0 +1,135 @@
+[0m17:00:16.483043 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7072e9c6f5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7072e8b0c220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7072e8b0c1c0>]}
+
+
+============================== 17:00:16.486072 | 009e7556-8881-4f5c-8a1d-7576e6b1195c ==============================
+[0m17:00:16.486072 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:00:16.486608 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/abel/.dbt', 'fail_fast': 'False', 'log_cache_events': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'static_parser': 'True', 'invocation_command': 'dbt init medical_warehouse', 'warn_error': 'None', 'log_path': 'logs', 'partial_parse': 'True', 'no_print': 'None', 'introspect': 'True', 'version_check': 'True', 'use_colors': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'debug': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'target_path': 'None'}
+[0m17:00:16.492208 [info ] [MainThread]: Creating dbt configuration folder at /home/abel/.dbt
+[0m17:00:16.493242 [info ] [MainThread]: A project called medical_warehouse already exists here.
+[0m17:00:16.494787 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.056122374, "process_in_blocks": "17528", "process_kernel_time": 0.067786, "process_mem_max_rss": "117200", "process_out_blocks": "8", "process_user_time": 1.858139}
+[0m17:00:16.495342 [debug] [MainThread]: Command `dbt init` succeeded at 17:00:16.495234 after 0.06 seconds
+[0m17:00:16.495787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7072e9c6f5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7072e8b0caf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7072e8b0c100>]}
+[0m17:00:16.496271 [debug] [MainThread]: Flushing usage events
+[0m17:00:18.594205 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:00:57.390961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7036665775e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7036654193c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703665419300>]}
+
+
+============================== 17:00:57.393249 | a3393445-662d-49fb-aeab-95b126e6f23d ==============================
+[0m17:00:57.393249 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:00:57.393858 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'target_path': 'None', 'debug': 'False', 'introspect': 'True', 'write_json': 'True', 'invocation_command': 'dbt debug', 'printer_width': '80', 'indirect_selection': 'eager', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'no_print': 'None', 'log_format': 'default', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'profiles_dir': '/home/abel/.dbt', 'version_check': 'True', 'empty': 'None', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'partial_parse': 'True'}
+[0m17:00:57.399600 [info ] [MainThread]: dbt version: 1.11.2
+[0m17:00:57.400051 [info ] [MainThread]: python version: 3.10.12
+[0m17:00:57.400442 [info ] [MainThread]: python path: /usr/bin/python3
+[0m17:00:57.400883 [info ] [MainThread]: os info: Linux-6.8.0-90-generic-x86_64-with-glibc2.35
+[0m17:00:57.401272 [info ] [MainThread]: Using profiles dir at /home/abel/.dbt
+[0m17:00:57.401621 [info ] [MainThread]: Using profiles.yml file at /home/abel/.dbt/profiles.yml
+[0m17:00:57.401991 [info ] [MainThread]: Using dbt_project.yml file at /home/abel/Desktop/kaim/shipping_data/dbt_project.yml
+[0m17:00:57.402427 [info ] [MainThread]: Configuration:
+[0m17:00:57.402859 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m17:00:57.403273 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:00:57.403689 [info ] [MainThread]: Required dependencies:
+[0m17:00:57.404270 [debug] [MainThread]: Executing "git --help"
+[0m17:00:57.406267 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:00:57.407113 [debug] [MainThread]: STDERR: "b''"
+[0m17:00:57.407598 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:00:57.408044 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m17:00:57.408553 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m17:00:57.409012 [info ] [MainThread]: dbt looked for a profiles.yml file in /home/abel/.dbt/profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m17:00:57.409481 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/abel/Desktop/kaim/shipping_data/dbt_project.yml> not found
+
+[0m17:00:57.410519 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.0636948, "process_in_blocks": "0", "process_kernel_time": 0.061844, "process_mem_max_rss": "117164", "process_out_blocks": "16", "process_user_time": 1.879261}
+[0m17:00:57.411063 [debug] [MainThread]: Command `dbt debug` failed at 17:00:57.410948 after 0.06 seconds
+[0m17:00:57.411554 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7036665775e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7036654193f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x703665413a00>]}
+[0m17:00:57.412033 [debug] [MainThread]: Flushing usage events
+[0m17:00:59.446147 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:02:26.633868 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7242cf88f010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7242ce718250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7242ce718190>]}
+
+
+============================== 17:02:26.636176 | 9deb4782-a23b-427e-85ad-797d4b2650bc ==============================
+[0m17:02:26.636176 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:02:26.636823 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'printer_width': '80', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'quiet': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'log_path': 'logs', 'partial_parse': 'True', 'no_print': 'None', 'profiles_dir': '/home/abel/.dbt', 'target_path': 'None', 'log_format': 'default', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'write_json': 'True', 'version_check': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init medical_warehouse', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True'}
+[0m17:02:26.642826 [info ] [MainThread]: A project called medical_warehouse already exists here.
+[0m17:02:26.643843 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.0549943, "process_in_blocks": "0", "process_kernel_time": 0.065951, "process_mem_max_rss": "117192", "process_out_blocks": "8", "process_user_time": 1.849647}
+[0m17:02:26.644435 [debug] [MainThread]: Command `dbt init` succeeded at 17:02:26.644329 after 0.06 seconds
+[0m17:02:26.644895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7242cf88f010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7242ce7192a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7242ce718130>]}
+[0m17:02:26.645339 [debug] [MainThread]: Flushing usage events
+[0m17:02:28.272391 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:02:32.778681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e656308ef50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e6561f18d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e6561f18cd0>]}
+
+
+============================== 17:02:32.780979 | 4d638721-1e55-4340-a8e9-e30994d3eb29 ==============================
+[0m17:02:32.780979 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:02:32.781541 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'log_format': 'default', 'no_print': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'use_colors': 'True', 'partial_parse': 'True', 'target_path': 'None', 'version_check': 'True', 'quiet': 'False', 'profiles_dir': '/home/abel/.dbt', 'log_cache_events': 'False', 'log_path': 'logs', 'empty': 'None', 'invocation_command': 'dbt debug', 'fail_fast': 'False', 'warn_error': 'None', 'static_parser': 'True', 'write_json': 'True', 'cache_selected_only': 'False'}
+[0m17:02:32.787054 [info ] [MainThread]: dbt version: 1.11.2
+[0m17:02:32.787457 [info ] [MainThread]: python version: 3.10.12
+[0m17:02:32.787850 [info ] [MainThread]: python path: /usr/bin/python3
+[0m17:02:32.788209 [info ] [MainThread]: os info: Linux-6.8.0-90-generic-x86_64-with-glibc2.35
+[0m17:02:32.788552 [info ] [MainThread]: Using profiles dir at /home/abel/.dbt
+[0m17:02:32.788849 [info ] [MainThread]: Using profiles.yml file at /home/abel/.dbt/profiles.yml
+[0m17:02:32.789122 [info ] [MainThread]: Using dbt_project.yml file at /home/abel/Desktop/kaim/shipping_data/dbt_project.yml
+[0m17:02:32.789438 [info ] [MainThread]: Configuration:
+[0m17:02:32.789898 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m17:02:32.790318 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:02:32.790824 [info ] [MainThread]: Required dependencies:
+[0m17:02:32.791436 [debug] [MainThread]: Executing "git --help"
+[0m17:02:32.794015 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:02:32.794738 [debug] [MainThread]: STDERR: "b''"
+[0m17:02:32.795281 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:02:32.795829 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m17:02:32.796454 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m17:02:32.796989 [info ] [MainThread]: dbt looked for a profiles.yml file in /home/abel/.dbt/profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m17:02:32.797517 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/abel/Desktop/kaim/shipping_data/dbt_project.yml> not found
+
+[0m17:02:32.798683 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.06459759, "process_in_blocks": "0", "process_kernel_time": 0.06302, "process_mem_max_rss": "116980", "process_out_blocks": "16", "process_user_time": 1.880609}
+[0m17:02:32.799858 [debug] [MainThread]: Command `dbt debug` failed at 17:02:32.799717 after 0.07 seconds
+[0m17:02:32.800481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e656308ef50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e6561f18dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e6561f128f0>]}
+[0m17:02:32.801108 [debug] [MainThread]: Flushing usage events
+[0m17:02:34.109318 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:05:24.982339 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75058156b640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750580419630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750580419570>]}
+
+
+============================== 17:05:24.984503 | ca4ff5a1-a96f-4a91-bb7c-f32aa82ae410 ==============================
+[0m17:05:24.984503 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:05:24.985046 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'debug': 'False', 'introspect': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'printer_width': '80', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'no_print': 'None', 'profiles_dir': '/home/abel/.dbt', 'use_colors': 'True', 'version_check': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'quiet': 'False'}
+[0m17:05:24.985553 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/abel/Desktop/kaim/shipping_data/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:05:24.986314 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.048454918, "process_in_blocks": "0", "process_kernel_time": 0.052045, "process_mem_max_rss": "116728", "process_out_blocks": "8", "process_user_time": 1.867626}
+[0m17:05:24.986749 [debug] [MainThread]: Command `dbt run` failed at 17:05:24.986674 after 0.05 seconds
+[0m17:05:24.987154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75058156b640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750580419d80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x750580419630>]}
+[0m17:05:24.987597 [debug] [MainThread]: Flushing usage events
+[0m17:05:26.422641 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:05:28.646194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3cab526dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3caa398e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3caa398dc0>]}
+
+
+============================== 17:05:28.648522 | cc961fb0-4956-4d8c-a64f-0b3d7e47869b ==============================
+[0m17:05:28.648522 [info ] [MainThread]: Running with dbt=1.11.2
+[0m17:05:28.649059 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'quiet': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'warn_error': 'None', 'no_print': 'None', 'profiles_dir': '/home/abel/.dbt', 'introspect': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'invocation_command': 'dbt test', 'empty': 'None', 'static_parser': 'True'}
+[0m17:05:28.649598 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/abel/Desktop/kaim/shipping_data/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:05:28.650242 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.048440896, "process_in_blocks": "0", "process_kernel_time": 0.060062, "process_mem_max_rss": "116856", "process_out_blocks": "16", "process_user_time": 1.854928}
+[0m17:05:28.650741 [debug] [MainThread]: Command `dbt test` failed at 17:05:28.650646 after 0.05 seconds
+[0m17:05:28.651159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3cab526dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3caa3995d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3caa398e80>]}
+[0m17:05:28.651596 [debug] [MainThread]: Flushing usage events
+[0m17:05:29.904415 [debug] [MainThread]: An error was encountered while trying to flush usage events
