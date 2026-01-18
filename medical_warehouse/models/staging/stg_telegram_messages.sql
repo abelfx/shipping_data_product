@@ -1,20 +1,21 @@
 WITH source AS (
-    SELECT * FROM raw.telegram_messages
+    SELECT *
+    FROM raw.telegram_messages
 ),
-
 cleaned AS (
     SELECT
-        message_id,
-        channel_name,
-        CAST(message_date AS DATE) AS message_date,
-        message_text,
+        message_id::BIGINT,
+        channel_name::TEXT,
+        message_date::TIMESTAMP,
+        message_text::TEXT,
+        views::INTEGER,
+        forwards::INTEGER,
+        has_media::BOOLEAN,
+        image_path::TEXT,
         LENGTH(message_text) AS message_length,
-        COALESCE(views, 0) AS view_count,
-        COALESCE(forwards, 0) AS forward_count,
-        COALESCE(has_media, FALSE) AS has_image,
-        image_path
+        CASE WHEN has_media THEN TRUE ELSE FALSE END AS has_image
     FROM source
     WHERE message_text IS NOT NULL
 )
-
-SELECT * FROM cleaned;
+SELECT *
+FROM cleaned
