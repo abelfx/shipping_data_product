@@ -2,3 +2,4 @@ telethon
 python-dotenv
 tqdm
 loguru
+psycopg2

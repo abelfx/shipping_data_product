@@ -1,0 +1,11 @@
+medical_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: warehouse_user       # the user we created earlier
+      password: warehouse_pass   # the password for that user
+      port: 5433                 # your Postgres port
+      dbname: medical_warehouse
+      schema: staging            # we'll use "staging" schema for dbt staging
