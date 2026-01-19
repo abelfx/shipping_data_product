@@ -3,3 +3,4 @@ python-dotenv
 tqdm
 loguru
 psycopg2
+ultralytics
