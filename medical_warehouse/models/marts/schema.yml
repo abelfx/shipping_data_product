@@ -19,3 +19,31 @@ models:
           - relationships:
               to: ref('dim_dates')
               field: date_key
+
+  - name: fct_image_detections
+    description: "Object detection enrichments joined to messages and dimensions"
+    columns:
+      - name: message_id
+        description: "Message identifier linking to fct_messages"
+        tests:
+          - relationships:
+              to: ref('fct_messages')
+              field: message_id
+      - name: channel_key
+        description: "FK to dim_channels"
+        tests:
+          - relationships:
+              to: ref('dim_channels')
+              field: channel_key
+      - name: date_key
+        description: "FK to dim_dates"
+        tests:
+          - relationships:
+              to: ref('dim_dates')
+              field: date_key
+      - name: detected_class
+        description: "Detected object class (COCO labels)"
+      - name: confidence_score
+        description: "Detection confidence score"
+      - name: image_category
+        description: "Derived category (promotional, product_display, lifestyle, other)"
