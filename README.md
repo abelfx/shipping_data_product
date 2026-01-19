@@ -101,6 +101,43 @@ The dbt project transforms raw tables into:
 - **Staging Models**: Cleaned raw data (`stg_telegram_messages`)
 - **Marts**: Business-ready tables (`dim_channels`, `dim_dates`, `fct_message`)
 
+### Step 4: Object Detection (YOLO)
+Enrich the data lake by running object detection on scraping images.
+```bash
+# Run detection script (uses YOLOv8n)
+python src/yolo_detect.py
+
+# Load detections to postgres
+python src/load_yolo_to_postgres.py
+
+# Update the detections fact table
+cd medical_warehouse && dbt run --select fct_image_detections
+```
+
+### Step 5: Analytical API
+Start the FastAPI server to serve analytical endpoints.
+```bash
+uvicorn api.main:app --reload
+```
+Endpoints available at `http://localhost:8000/docs`:
+- `GET /api/reports/top-products`: Most frequent terms.
+- `GET /api/channels/{name}/activity`: Posting trends.
+- `GET /api/search/messages`: Text search.
+- `GET /api/reports/visual-content`: Image analytics.
+
+### Step 6: Pipeline Orchestration (Dagster)
+Run the full pipeline (Scrape -> Load -> dbt -> YOLO) using Dagster.
+
+1. Install Dagster dependencies (if not already installed):
+   ```bash
+   pip install dagster dagster-webserver
+   ```
+2. Launch the Dagster UI:
+   ```bash
+   dagster dev -f pipeline.py
+   ```
+3. Access the UI at `http://localhost:3000` to materialize the `daily_pipeline_job`.
+
 ## 🐳 Docker Support
 You can use Docker to spin up the entire environment (Project + Database).
 ```bash
